@@ -21,5 +21,10 @@
                 "python.testing.pytestPath": "/workspaces/rags/.venv/bin/pytest"
             }
         }
-    }
+    },
+    
+    // Forward SSH agent for Git authentication
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    ]
 }
