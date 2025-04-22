@@ -73,4 +73,4 @@ To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookie
 - Create a [new release](https://github.com/boss@yahoo.com/rags/releases/new) on Github.
 - Create a new tag in the form `*.*.*`.
 
-For more details, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/cicd/#how-to-trigger-a-release). 
+For more details, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/cicd/#how-to-trigger-a-release).
