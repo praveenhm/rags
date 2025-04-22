@@ -1,5 +1,52 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: false
 ---
+# Dev Container Setup
+
+## SSH Authentication for All Projects
+
+When creating a new project with a dev container, copy this entire section from [.devcontainer/devcontainer.json](mdc:.devcontainer/devcontainer.json):
+
+```json
+// ===== BEGIN SSH CONFIGURATION =====
+// COPY THIS ENTIRE SECTION TO NEW PROJECTS FOR SSH COMPATIBILITY
+
+// 1. Mount SSH keys from host to container
+"mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+],
+
+// 2. Forward SSH agent socket for authentication
+"remoteEnv": {
+    "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
+},
+
+// 3. Ensure Git is properly installed and configured
+"features": {
+    "ghcr.io/devcontainers/features/git:1": {
+        "version": "latest"
+    }
+}
+// ===== END SSH CONFIGURATION =====
+```
+
+### What Each Part Does
+
+1. **SSH Key Mounting**: Makes your local SSH keys available in the container
+2. **SSH Agent Forwarding**: Allows the container to use your host's SSH agent for authentication
+3. **Git Features**: Ensures Git is properly installed with latest version
+
+### How to Use
+
+1. In any new project, create a `.devcontainer/devcontainer.json` file
+2. Copy the SSH configuration section above into the file
+3. Ensure it's properly integrated with other settings (i.e., no duplicate keys)
+4. Rebuild the container to apply changes
+
+## Python Version
+
+For Python projects:
+- Always use Python 3.12 or newer: `"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye"`
+- Update the version when creating new projects

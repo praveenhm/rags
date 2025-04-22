@@ -23,17 +23,24 @@
         }
     },
     
-    // Forward SSH agent and keys for Git authentication
-    // This configuration will work for any project
+    // ===== BEGIN SSH CONFIGURATION =====
+    // COPY THIS ENTIRE SECTION TO NEW PROJECTS FOR SSH COMPATIBILITY
+    
+    // 1. Mount SSH keys from host to container
     "mounts": [
         "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
     ],
+    
+    // 2. Forward SSH agent socket for authentication
     "remoteEnv": {
         "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
     },
+    
+    // 3. Ensure Git is properly installed and configured
     "features": {
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest"
         }
     }
+    // ===== END SSH CONFIGURATION =====
 }
