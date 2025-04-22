@@ -1,0 +1,26 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Project Structure
+
+This project is organized as a Python package:
+
+- Library code is in the [src/rags](mdc:src/rags) directory
+- Tests are in the [tests](mdc:tests) directory
+- Documentation is in the [docs](mdc:docs) directory
+- CI/CD configuration is in [.github](mdc:.github) directory
+
+## Core Components
+
+- Main module: [src/rags/foo.py](mdc:src/rags/foo.py)
+- Tests: [tests/test_foo.py](mdc:tests/test_foo.py)
+
+## Project Configuration
+
+- Package configuration: [pyproject.toml](mdc:pyproject.toml)
+- Testing with tox: [tox.ini](mdc:tox.ini)
+- Documentation configuration: [mkdocs.yml](mdc:mkdocs.yml)
+- Development environment: [.devcontainer](mdc:.devcontainer)
+- Pre-commit hooks: [.pre-commit-config.yaml](mdc:.pre-commit-config.yaml)
