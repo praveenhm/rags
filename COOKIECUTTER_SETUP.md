@@ -2,6 +2,21 @@
 
 This project was initiated using [fpgmaas/cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv).
 
+## Enhancements to the Original Template
+
+The following enhancements have been added beyond the original cookiecutter template:
+
+1. **Dev Container Improvements**
+   - Updated Python version to 3.12
+   - Added SSH key forwarding and authentication for GitHub
+   - Added Git integration features
+
+2. **Cursor Rules**
+   - Added several Cursor rules to guide development
+   - Rules for project structure, code standards, and workflow
+
+For details on these enhancements, see the README.md and the `.cursor/rules/` directory.
+
 ## Getting started with your project
 
 ### 1. Create a New Repository

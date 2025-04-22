@@ -18,6 +18,8 @@ A Python project for RAGs (Retrieval-Augmented Generation) implementation.
 - Comprehensive test suite with pytest
 - Dev containers for consistent development environments
 - CI/CD setup with GitHub Actions
+- SSH key forwarding in dev containers for seamless Git authentication
+- Cursor rules for consistent development practices
 
 ## Installation
 
@@ -59,6 +61,29 @@ To check code quality:
 ```bash
 make check
 ```
+
+### Dev Container Configuration
+
+This project includes a custom dev container setup with:
+
+- Python 3.12 base image
+- SSH key forwarding for GitHub authentication
+- Pre-configured Git integration
+
+For details on the SSH setup, see the `.devcontainer/devcontainer.json` file.
+
+### Cursor Rules
+
+The project includes the following Cursor rules to guide development:
+
+- **Project Structure**: Overview of the codebase organization
+- **Development Workflow**: Standard processes for developing the project
+- **Code Standards**: Coding conventions and quality standards
+- **Environment Setup**: Python version and environment configuration
+- **Package Management**: Using uv for package management
+- **Dev Container Setup**: SSH configuration for containers
+
+These rules help maintain consistent practices across the codebase.
 
 ## Project Setup
 
