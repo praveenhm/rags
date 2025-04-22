@@ -23,8 +23,17 @@
         }
     },
     
-    // Forward SSH agent for Git authentication
+    // Forward SSH agent and keys for Git authentication
+    // This configuration will work for any project
     "mounts": [
         "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
-    ]
+    ],
+    "remoteEnv": {
+        "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest"
+        }
+    }
 }
