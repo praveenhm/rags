@@ -9,7 +9,7 @@ A Python project for RAGs (Retrieval-Augmented Generation) implementation.
 
 - **Github repository**: <https://github.com/praveenhm/rags/>
 - **Documentation** <https://praveenhm.github.io/rags/>
-- **deepwiki docs** <https://deepwiki.com/praveenhm/rags/1-overview>
+- **Deepwiki docs** <https://deepwiki.com/praveenhm/rags/1-overview>
 
 ## Features
 
