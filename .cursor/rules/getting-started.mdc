@@ -3,3 +3,59 @@ description:
 globs:
 alwaysApply: false
 ---
+# Getting Started
+
+Follow these steps from the [README.md](mdc:README.md) to set up the project:
+
+## 1. Create a New Repository
+
+```bash
+git init -b main
+git add .
+git commit -m "init commit"
+git remote add origin git@github.com:boss@yahoo.com/rags.git
+git push -u origin main
+```
+
+## 2. Set Up Development Environment
+
+Always use uv instead of pip:
+
+```bash
+make install
+```
+
+This command will:
+- Create a virtual environment using uv
+- Install dependencies
+- Install pre-commit hooks
+- Generate the uv.lock file
+
+## 3. Run Pre-commit Hooks
+
+Fix formatting issues:
+
+```bash
+uv run pre-commit run -a
+```
+
+## 4. Commit Changes
+
+```bash
+git add .
+git commit -m 'Fix formatting issues'
+git push origin main
+```
+
+## Additional Setup
+
+- Publishing to PyPI: Add a PyPI API Token as a GitHub secret named `PYPI_TOKEN`
+- Documentation: Enabled via MkDocs and GitHub Pages
+- Code Coverage: Configured with Codecov
+
+## Releasing New Versions
+
+1. Create an API Token on PyPI
+2. Add the token to GitHub project secrets as `PYPI_TOKEN`
+3. Create a new GitHub release
+4. Create a tag in the form `*.*.*`

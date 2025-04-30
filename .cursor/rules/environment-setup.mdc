@@ -3,3 +3,34 @@ description:
 globs:
 alwaysApply: false
 ---
+# Python Environment Setup
+
+## ⚠️ Important: Always Use Python 3.12 ⚠️
+
+Currently, the development container is configured to use Python 3.11:
+- The `.devcontainer/devcontainer.json` file specifies `"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye"`
+- This is why your virtual environment is using Python 3.11
+
+## How to Use Python 3.12
+
+To switch to Python 3.12:
+
+1. Modify the dev container configuration:
+   - Edit [.devcontainer/devcontainer.json](mdc:.devcontainer/devcontainer.json)
+   - Change the image to `"mcr.microsoft.com/devcontainers/python:1-3.12-bullseye"`
+
+2. Rebuild the container:
+   - In VS Code, use the "Rebuild Container" command
+   - Or restart the container with the updated configuration
+
+3. Recreate the virtual environment:
+   ```bash
+   rm -rf .venv
+   make install
+   ```
+
+## Project Configuration
+
+The [pyproject.toml](mdc:pyproject.toml) already supports Python 3.12:
+- `requires-python = ">=3.9,<4.0"`
+- Python 3.12 is listed in the classifiers

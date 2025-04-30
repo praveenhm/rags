@@ -3,3 +3,32 @@ description:
 globs:
 alwaysApply: false
 ---
+# Code Standards
+
+This project follows specific code quality standards defined in [pyproject.toml](mdc:pyproject.toml):
+
+## Type Checking
+
+- Uses mypy with strict type checking
+- All functions must have type annotations
+- Configuration is in the `[tool.mypy]` section of [pyproject.toml](mdc:pyproject.toml)
+
+## Code Style and Linting
+
+- Uses ruff for linting and formatting
+- Target Python version is 3.9+
+- Line length is 120 characters
+- Configuration is in the `[tool.ruff]` section of [pyproject.toml](mdc:pyproject.toml)
+- Enforced by pre-commit hooks in [.pre-commit-config.yaml](mdc:.pre-commit-config.yaml)
+
+## Testing Standards
+
+- All code should have test coverage
+- Tests are located in [tests](mdc:tests)
+- Coverage settings in `[tool.coverage]` section of [pyproject.toml](mdc:pyproject.toml)
+
+## Documentation
+
+- All public functions/classes must have docstrings
+- Documentation follows style in [src/rags/foo.py](mdc:src/rags/foo.py)
+- Documentation is built with MkDocs as configured in [mkdocs.yml](mdc:mkdocs.yml)

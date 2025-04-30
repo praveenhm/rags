@@ -3,3 +3,38 @@ description:
 globs:
 alwaysApply: false
 ---
+# Development Workflow
+
+This project is a cookiecutter uv project. ALWAYS use uv instead of pip for all dependency management operations.
+
+## Setup
+
+- Use `uv` for virtual environment and dependency management
+- Install the environment with: `make install`
+- For any package operations use `uv` commands, not pip (e.g., `uv add package` instead of `pip install package`)
+
+## Development Tools
+
+- Code quality tools are run with: `make check`
+  - Pre-commit hooks: [.pre-commit-config.yaml](mdc:.pre-commit-config.yaml)
+  - Type checking with mypy as configured in [pyproject.toml](mdc:pyproject.toml)
+  - Linting with ruff as configured in [pyproject.toml](mdc:pyproject.toml)
+  - Dependency checking with deptry
+
+## Testing
+
+- Run tests with: `make test`
+- Tests use pytest with coverage reporting
+- Test configuration in [tox.ini](mdc:tox.ini) and [pyproject.toml](mdc:pyproject.toml)
+
+## Documentation
+
+- Build and serve documentation with: `make docs`
+- Documentation is configured in [mkdocs.yml](mdc:mkdocs.yml)
+
+## Build and Publish
+
+- Build package with: `make build`
+- Publish to PyPI with: `make publish`
+
+See the [Makefile](mdc:Makefile) for all available commands.
